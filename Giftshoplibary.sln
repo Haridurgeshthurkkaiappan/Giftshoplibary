@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32602.291
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Giftshoplibary", "Giftshoplibary\Giftshoplibary.csproj", "{D41CADB0-D264-4667-9740-7FCFA7863238}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Giftshop", "Giftshop\Giftshop.csproj", "{3CA26848-D0DC-4FC9-86AB-5AA7AC62FF95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D41CADB0-D264-4667-9740-7FCFA7863238}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D41CADB0-D264-4667-9740-7FCFA7863238}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D41CADB0-D264-4667-9740-7FCFA7863238}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D41CADB0-D264-4667-9740-7FCFA7863238}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CA26848-D0DC-4FC9-86AB-5AA7AC62FF95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CA26848-D0DC-4FC9-86AB-5AA7AC62FF95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CA26848-D0DC-4FC9-86AB-5AA7AC62FF95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CA26848-D0DC-4FC9-86AB-5AA7AC62FF95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C823B577-38B4-4013-96FF-B5A098CABE77}
+	EndGlobalSection
+EndGlobal
