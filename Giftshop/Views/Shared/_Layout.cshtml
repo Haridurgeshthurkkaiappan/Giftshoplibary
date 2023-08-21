@@ -17,23 +17,57 @@
 
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Giftshop</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+    <header class="header_section">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="index.html">
+                <span>
+                    Giftos
+                </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class=""></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav  ">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Giftshop" asp-action="Contact">Contact
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Giftshop" asp-action="index">Index
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Giftshop" asp-action="Shop">Shop
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Giftshop" asp-action="testimonial">Testimonial
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Giftshop" asp-action="Why">Why</a>
+                    </li>
+                </ul>
+                <div class="user_option">
+                    <a href="">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span>
+                            Login
+                        </span>
+                    </a>
+                    <a href="">
+                        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                    </a>
+                    <form class="form-inline ">
+                        <button class="btn nav_search-btn" type="submit">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
         </nav>
@@ -44,9 +78,12 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class=" footer_section">
         <div class="container">
-            &copy; 2023 - Giftshop - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <p>
+                &copy; <span id="displayYear"></span> All Rights Reserved By
+                <a href="https://html.design/">Free Html Templates</a>
+            </p>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
