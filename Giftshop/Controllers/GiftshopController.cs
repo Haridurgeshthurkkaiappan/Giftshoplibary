@@ -22,7 +22,7 @@ namespace Giftshop.Controllers
         {
             return View();
         }
-        public ActionResult temstimonial()
+        public ActionResult testimonial()
         {
             return View();
         }
