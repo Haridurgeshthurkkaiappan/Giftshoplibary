@@ -20,7 +20,7 @@ namespace Giftshop.Controllers
         // GET: StudentController
         public ActionResult List()
         {
-            return View("list",new List<StudentInfoModel>( obj.GetStudentInformations()));
+            return View("list", new List<StudentInfoModel>( obj.GetStudentInformations()));
         }
 
         // GET: StudentController/Details/5
