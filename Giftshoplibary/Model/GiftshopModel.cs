@@ -4,16 +4,16 @@ using System.ComponentModel.DataAnnotations;
 namespace Giftshoplibary
 {
     public class GiftshopModel
-    { 
-        int ID { get; set; }
+    {
+        public int ID { get; set; }
        [Required]
-        string Name { get; set; }
+        public string Name { get; set; }
        [Required]
-       string Email { get; set; }
+        public string Email { get; set; }
         [Required]
-       long Phonenumber { get; set; }
+        public long Phonenumber { get; set; }
         [Required]
-       string Message { get; set; }
+        public string Message { get; set; }
 
 
     }
