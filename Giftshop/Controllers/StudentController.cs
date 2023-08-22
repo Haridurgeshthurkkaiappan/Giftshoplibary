@@ -32,17 +32,26 @@ namespace Giftshop.Controllers
         // GET: StudentController/Create
         public ActionResult Create()
         {
-            return View();
+            return View("Insert", new StudentInfoModel());
         }
 
         // POST: StudentController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(StudentInfoModel Data)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    obj.InsertStudentInformation(Data);
+                    return RedirectToAction(nameof(List));
+                }
+                else
+                {
+                    return View("Insert", new StudentInfoModel());
+
+                }
             }
             catch
             {
