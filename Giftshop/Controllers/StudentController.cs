@@ -12,10 +12,13 @@ namespace Giftshop.Controllers
     public class StudentController : Controller
     {
         public StudentInformationBusiness obj;
+        public CourseBusiness obj1;
+
 
         public StudentController()
         {
             obj = new StudentInformationBusiness();
+            obj1 = new CourseBusiness();
         }
         // GET: StudentController
         public ActionResult List()
@@ -32,7 +35,9 @@ namespace Giftshop.Controllers
         // GET: StudentController/Create
         public ActionResult Create()
         {
-            return View("Insert", new StudentInfoModel());
+            var model = new StudentInfoModel();
+            model.CourcesBE = obj1.Getcoursename();
+            return View("Insert", model);
         }
 
         // POST: StudentController/Create
@@ -62,17 +67,29 @@ namespace Giftshop.Controllers
         // GET: StudentController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+
+            var result = obj.GetStudentInformation(id);
+            return View("Edit", result);
         }
 
         // POST: StudentController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, StudentInfoModel Data)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    obj.UpdateStudentInformation(Data);
+                    return RedirectToAction(nameof(List));
+                }
+                else
+                {
+                    return View("Edit", new StudentInfoModel());
+
+                }
+              
             }
             catch
             {
@@ -81,19 +98,22 @@ namespace Giftshop.Controllers
         }
 
         // GET: StudentController/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int studentid)
         {
-            return View();
+            var result = obj.GetStudentInformation(studentid);
+
+            return View("Delete", result);
         }
 
         // POST: StudentController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Remove(int studentid)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                obj.DeleteStudentInformation(studentid);
+                return RedirectToAction(nameof(List));
             }
             catch
             {

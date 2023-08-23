@@ -10,7 +10,7 @@ using Giftshoplibary.Model;
 
 namespace Giftshoplibary.Business
 {
-    class CourseBusiness
+   public class CourseBusiness
     {
         public readonly string connectionString;
 
