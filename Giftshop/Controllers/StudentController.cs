@@ -68,6 +68,7 @@ namespace Giftshop.Controllers
         public ActionResult Edit(int id)
         {
 
+
             var result = obj.GetStudentInformation(id);
             return View("Edit", result);
         }

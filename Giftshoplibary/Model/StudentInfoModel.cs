@@ -15,7 +15,7 @@ namespace Giftshoplibary.Model
         }
        public  int studentid { get; set; }
         [Required]
-        [Range(1, 350)]
+        [MinLength(5),MaxLength(350)]
 
         public string Name { get; set; }
         [Required]
@@ -23,9 +23,11 @@ namespace Giftshoplibary.Model
         [Required]
         public string Course { get; set; }
         [Required]
+        [EmailAddress]
+        [StringLength(50)]
         public string Email { get; set; }
         [Required]
-        [Range(1,10)]
+        [Range(1,9999999999)]
         public long Mobilenumber { get; set;}
        
         public List<CourseModel> CourcesBE { get; set; }
