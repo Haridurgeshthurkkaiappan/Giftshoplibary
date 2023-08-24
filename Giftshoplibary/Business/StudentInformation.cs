@@ -30,7 +30,7 @@ namespace Giftshoplibary.Business
                 SqlConnection con = new SqlConnection(connectionString);
 
                 con.Open();
-                con.Execute($" exec insertStudentInformation'{Std.Name}', '{Std.DOB}','{Std.Course}','{Std.Email}','{Std.Mobilenumber}'");
+                con.Execute($" exec insertStudentInformation'{Std.Name}', '{Std.DOB.ToString("MM-dd-yyyy")}','{Std.Course}','{Std.Email}','{Std.Mobilenumber}'");
 
                 con.Close();
 

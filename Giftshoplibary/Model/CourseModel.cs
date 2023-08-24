@@ -9,8 +9,9 @@ namespace Giftshoplibary.Model
 {
    public  class CourseModel
     {
-        public int courseid { get; set; }
         [Required]
         public string course { get; set; }
+        public int courseid { get; set; }
+       
     }
 }

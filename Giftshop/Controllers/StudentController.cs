@@ -54,11 +54,11 @@ namespace Giftshop.Controllers
                 }
                 else
                 {
-                    return View("Insert", new StudentInfoModel());
+                    return View("Insert", Data);
 
                 }
             }
-            catch
+            catch (Exception ex)
             {
                 return View();
             }
@@ -67,9 +67,9 @@ namespace Giftshop.Controllers
         // GET: StudentController/Edit/5
         public ActionResult Edit(int id)
         {
-
-
             var result = obj.GetStudentInformation(id);
+            result.CourcesBE = obj1.Getcoursename();
+           
             return View("Edit", result);
         }
 
