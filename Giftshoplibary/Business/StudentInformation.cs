@@ -145,5 +145,57 @@ namespace Giftshoplibary.Business
 
         }
 
+        public Boolean Itexists(string Name)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(connectionString);
+                var connection = new SqlConnection(connectionString);
+                con.Open();
+                var result = connection.QueryFirst<Boolean>($"  exec Itexists '{Name}' ");
+                con.Close();
+
+
+
+                return result;
+
+
+            }
+
+            catch (SqlException er)
+            {
+                throw;
+            }
+            catch (Exception r)
+            {
+                throw r;
+            }
+        }
+
+        public Boolean Itexistsyid(string Name, int studentId)
+        {
+            try
+            {
+
+
+
+                SqlConnection connection = new SqlConnection(connectionString);
+                connection.Open();
+                var res = connection.QueryFirst<Boolean>($"exec Itexistsbyid '{Name}',{studentId}");
+                connection.Close();
+
+                return res;
+            }
+            catch (SqlException e)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+
+        }
     }
 }

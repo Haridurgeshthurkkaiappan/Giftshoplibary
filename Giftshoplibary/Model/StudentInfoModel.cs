@@ -12,6 +12,7 @@ namespace Giftshoplibary.Model
         public StudentInfoModel()
         {
             CourcesBE = new List<CourseModel>();
+            DOB = new DateTime(1990,01,01);
         }
        public  int studentid { get; set; }
         [Required]
@@ -27,7 +28,7 @@ namespace Giftshoplibary.Model
         [StringLength(50)]
         public string Email { get; set; }
         [Required]
-        [Range(1,9999999999)]
+       [ RegularExpression(@"^[0-9]{10}$")]
         public long Mobilenumber { get; set;}
        
         public List<CourseModel> CourcesBE { get; set; }

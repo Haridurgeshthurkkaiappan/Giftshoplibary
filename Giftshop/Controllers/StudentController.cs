@@ -1,4 +1,5 @@
-﻿using Giftshoplibary.Business;
+﻿using Giftshop.Models;
+using Giftshoplibary.Business;
 using Giftshoplibary.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -43,24 +44,31 @@ namespace Giftshop.Controllers
         // POST: StudentController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(StudentInfoModel Data)
+        public ActionResult Create(StudentInfoModel data)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    obj.InsertStudentInformation(Data);
+                    if (obj.Itexists(data.Name))
+                    {
+                        ModelState.AddModelError("Name", "Name already exists");
+                        data.CourcesBE = obj1.Getcoursename();
+                        return View("Insert", data);
+                    }
+                    obj.InsertStudentInformation(data);
                     return RedirectToAction(nameof(List));
                 }
                 else
                 {
-                    return View("Insert", Data);
+                    data.CourcesBE = obj1.Getcoursename();
+                    return View("Insert", data);
 
                 }
             }
             catch (Exception ex)
             {
-                return View();
+                return View("Error",new ErrorViewModel { CustomMessage = "Error in Insert", ActualErrorMessage = ex.Message });
             }
         }
 
@@ -76,25 +84,33 @@ namespace Giftshop.Controllers
         // POST: StudentController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, StudentInfoModel Data)
+        public ActionResult Edit(int id, StudentInfoModel data)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    obj.UpdateStudentInformation(Data);
+                    if(obj.Itexistsyid(data.Name,data.studentid))
+                    {
+                        ModelState.AddModelError("Name", "Name already exists");
+                        data.CourcesBE = obj1.Getcoursename();
+                        return View("Edit", data);
+
+                    }
+                    obj.UpdateStudentInformation(data);
                     return RedirectToAction(nameof(List));
                 }
                 else
                 {
-                    return View("Edit", new StudentInfoModel());
+                    data.CourcesBE = obj1.Getcoursename();
+                    return View("Edit",  data);
 
                 }
               
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                return View("Error", new ErrorViewModel { CustomMessage = "Error in Insert", ActualErrorMessage = ex.Message });
             }
         }
 
@@ -116,9 +132,9 @@ namespace Giftshop.Controllers
                 obj.DeleteStudentInformation(studentid);
                 return RedirectToAction(nameof(List));
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                return View("Error", new ErrorViewModel { CustomMessage = "Error in Insert", ActualErrorMessage = ex.Message });
             }
         }
     }
