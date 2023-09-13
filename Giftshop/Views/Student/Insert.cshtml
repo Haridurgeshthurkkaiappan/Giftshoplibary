@@ -11,11 +11,11 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-           @* <div class="form-group">
-                <label asp-for="studentid" class="control-label"></label>
-                <input asp-for="studentid" class="form-control" />
-                <span asp-validation-for="studentid" class="text-danger"></span>
-            </div>*@
+            @* <div class="form-group">
+            <label asp-for="studentid" class="control-label"></label>
+            <input asp-for="studentid" class="form-control" />
+            <span asp-validation-for="studentid" class="text-danger"></span>
+        </div>*@
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
@@ -34,6 +34,18 @@
                 @*<input asp-for="Course" class="form-control" />*@
                 <span asp-validation-for="Course" class="text-danger"></span>
             </div>
+            <label asp-for="College" class="control-label"></label>
+            <select id='selUser' style='width: 200px;'>
+                <option value='0'>Select College</option>
+                <option value='1'>SRM</option>
+                <option value='2'>KRCT</option>
+                <option value='3'>MKCE</option>
+                <option value='4'>HICET</option>
+                <option value='5'>PSG</option>
+                <option value='6'>IIIT</option>
+                <option value='7'>MIT</option>
+            </select>
+            <div id='result'></div>
             <div class="form-group">
 
                 <label asp-for="Email" class="control-label"></label>

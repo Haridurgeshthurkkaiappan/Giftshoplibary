@@ -24,8 +24,11 @@ namespace Giftshoplibary.Model
         [Required]
         public string Course { get; set; }
         [Required]
+        public String College { get; set; }
+        [Required]
         [EmailAddress]
         [StringLength(50)]
+
         public string Email { get; set; }
         [Required]
        [ RegularExpression(@"^[0-9]{10}$")]
